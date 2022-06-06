@@ -32,16 +32,8 @@ class Ellipse:
         self.ep = c, d
 
 
-def get_random_classname() -> str:
-    return choice(['Line', 'Rect', 'Ellipse'])
-
-
-def get_random_object(name: str) -> object:
-    if name == 'Line':
-        return Line
-    elif name == 'Rect':
-        return Rect
-    return Ellipse
+def get_random_class() -> object:
+    return choice([Line, Rect, Ellipse])
 
 
 def get_random_coords() -> tuple:
@@ -52,8 +44,7 @@ def get_random_coords() -> tuple:
 if __name__ == '__main__':
     elements = []
     for _ in range(217):
-        classname = get_random_classname()
-        element = get_random_object(classname)(*get_random_coords())
+        element = get_random_class()(*get_random_coords())
         elements.append(element)
     for element in elements:
         if isinstance(element, Line):
