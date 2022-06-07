@@ -49,13 +49,8 @@ class GamePole:
 
     def init(self):
         self.pole = [[Cell() for _ in range(self.N)] for _ in range(self.N)]
-        coords = []
-        while len(coords) < self.M:
-            x, y = randint(0, self.N - 1), randint(0, self.N - 1)
-            if (x, y) not in coords:
-                coords.append((x, y))
-        for x, y in coords:
-            self.pole[x][y].mine = True
+        self.get_random_coords()
+        self.installation_mine()
         for x, row in enumerate(self.pole):
             for y, cell in enumerate(row):
                 if not cell.mine:
@@ -67,10 +62,21 @@ class GamePole:
                             except IndexError:
                                 cell.around_mines += 0
 
+    def get_random_coords(self):
+        self.coords = []
+        while len(self.coords) < self.M:
+            x, y = randint(0, self.N - 1), randint(0, self.N - 1)
+            if (x, y) not in self.coords:
+                self.coords.append((x, y))
+
+    def installation_mine(self):
+        for x, y in self.coords:
+            self.pole[x][y].mine = True
+
     def show(self):
         for row in self.pole:
             for cell in row:
-                if not cell.fl_open:
+                if cell.mine:
                     print('#', end='')
                 else:
                     print(cell.around_mines, end='')
