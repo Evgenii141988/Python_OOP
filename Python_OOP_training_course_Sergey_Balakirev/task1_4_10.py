@@ -51,6 +51,10 @@ class GamePole:
         self.pole = [[Cell() for _ in range(self.N)] for _ in range(self.N)]
         self.get_random_coords()
         self.installation_mine()
+        self.count_mine_around_cell()
+
+    def count_mine_around_cell(self):
+        """Метод подсчета мин вокруг пустой клетки"""
         for x, row in enumerate(self.pole):
             for y, cell in enumerate(row):
                 if not cell.mine:
@@ -63,6 +67,7 @@ class GamePole:
                                 cell.around_mines += 0
 
     def get_random_coords(self):
+        """Метод получения случайных координат"""
         self.coords = []
         while len(self.coords) < self.M:
             x, y = randint(0, self.N - 1), randint(0, self.N - 1)
@@ -70,10 +75,12 @@ class GamePole:
                 self.coords.append((x, y))
 
     def installation_mine(self):
+        """Метод установки мин"""
         for x, y in self.coords:
             self.pole[x][y].mine = True
 
     def show(self):
+        """Метод отображение поля в консоли в виде таблицы чисел открытых клеток"""
         for row in self.pole:
             for cell in row:
                 if cell.mine:
