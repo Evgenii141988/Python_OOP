@@ -83,7 +83,7 @@ class GamePole:
         """Метод отображение поля в консоли в виде таблицы чисел открытых клеток"""
         for row in self.pole:
             for cell in row:
-                if cell.mine:
+                if not cell.fl_open:
                     print('#', end='')
                 else:
                     print(cell.around_mines, end='')
