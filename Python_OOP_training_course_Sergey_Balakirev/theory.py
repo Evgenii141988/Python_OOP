@@ -3,9 +3,14 @@ class Point:
     color = 'red'
     circle = 2
 
-    def __init__(self, a, b):
-        self.x = a
-        self.y = b
+    def __new__(cls, *args, **kwargs):
+        print(f'Вызов __new__ для {cls} {args} {kwargs}')
+        return super().__new__(cls)
+
+    def __init__(self, x=0, y=0):
+        print(f'Вызов __init__ для {self}')
+        self.x = x
+        self.y = y
 
     def set_coords(self, x, y):
         self.x = x
@@ -19,14 +24,13 @@ class Point:
 
 
 if __name__ == '__main__':
-    Point.color = 'black'
-    a = Point(1, 2)
-    b = Point(3, 4)
-    a.x = 1
-    a.y = 2
-    b.x = 10
-    b.y = 20
+    # Point.color = 'black'
+    # a = Point(1, 2)
+    # b = Point(3, 4)
+    # a.x = 1
+    # a.y = 2
+    # b.x = 10
+    # b.y = 20
     pt = Point(5, 6)
-    pt.set_coords(1, 3)
-    print(pt.__dict__)
-    print(pt.get_coords())
+    print(pt.x)
+    # pt.set_coords(1, 3)
