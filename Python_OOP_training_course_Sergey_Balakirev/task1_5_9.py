@@ -9,18 +9,15 @@
 # P.S. В программе на экран ничего выводить не нужно.
 
 class Point:
-    __instance = None
-
-    def __new__(cls, *args, **kwargs):
-        cls.__instance = super().__new__(cls)
-        return cls.__instance
 
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
     def clone(self):
-        return self.__instance
+        x = self.x
+        y = self.y
+        return Point(x, y)
 
 
 if __name__ == '__main__':
@@ -28,6 +25,8 @@ if __name__ == '__main__':
     pt_clone = pt.clone()
     print(id(pt))
     print(id(pt_clone))
+    print(pt.x)
+    print(pt_clone.x)
     assert id(pt_clone) != id(pt), "метод clone не создает новый объект"
     pt1 = Point(3, 4)
     pt1_clone = pt1.clone()
