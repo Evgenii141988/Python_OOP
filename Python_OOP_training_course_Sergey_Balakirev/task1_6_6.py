@@ -23,6 +23,5 @@ class Loader:
 
 
 if __name__ == '__main__':
-    # эти строчки не менять!
     res = Loader.parse_format("1, 2, 3, -5, 10", Factory)
     print(res)
