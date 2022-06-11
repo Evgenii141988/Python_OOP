@@ -1,5 +1,6 @@
 import re
 
+
 class CardCheck:
     CHARS_FOR_NUMBER = r'\d{4}-\d{4}-\d{4}-\d{4}'
     CHARS_FOR_NAME = r'[A-Z]+\s[A-Z]+'
