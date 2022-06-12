@@ -25,3 +25,5 @@ if __name__ == '__main__':
     app_youtube = Application("Youtube")
     store.add_application(app_youtube)
     store.remove_application(app_youtube)
+    store.block_application(app_youtube)
+    print(app_youtube.blocked)
