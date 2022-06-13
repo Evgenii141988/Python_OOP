@@ -51,12 +51,14 @@ class Router:
         self.servers_connect.setdefault(server.ip, server)
         server.router_connect = self
         server.connect = True
+        print('Сonnection established successfully')
 
     def unlink(self, server):
         """для отсоединения сервера server (объекта класса Server) от роутера"""
         del self.servers_connect[server.ip]
         server.router_connect = None
         server.connect = False
+        print('Сonnection stopped')
 
     def send_data(self):
         """
