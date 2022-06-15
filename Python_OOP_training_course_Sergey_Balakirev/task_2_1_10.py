@@ -35,4 +35,4 @@ if __name__ == '__main__':
     res1 = EmailValidator.check_email("sc_lib@list_ru")  # False
     print(res)
     print(res1)
-    print(EmailValidator.get_random_email())
+
