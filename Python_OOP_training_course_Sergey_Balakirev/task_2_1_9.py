@@ -38,8 +38,12 @@ class LinkedList:
             self.tail = obj
 
     def remove_obj(self):
-        self.tail = self.tail.get_prev()
-        self.tail.set_next(None)
+        try:
+            self.tail = self.tail.get_prev()
+            self.tail.set_next(None)
+        except AttributeError:
+            self.head = None
+            # self.tail = None
 
     def get_data(self):
         datas = []
@@ -56,6 +60,10 @@ if __name__ == '__main__':
     lst.add_obj(ObjList("данные 2"))
     lst.add_obj(ObjList("данные 3"))
     lst.remove_obj()
-    print(lst.tail.get_data())
-    res = lst.get_data()
-    print(res)
+    lst.remove_obj()
+    lst.remove_obj()
+    print(lst.head)
+    print(lst.tail)
+    # print(lst.tail.get_data())
+    # res = lst.get_data()
+    # print(res)
