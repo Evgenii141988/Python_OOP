@@ -1,8 +1,14 @@
 class Integer:
+    @classmethod
+    def verify_coord(cls, coord):
+        if not isinstance(coord, int):
+            raise TypeError("Координата должна быть целым числом")
+
     def __set_name__(self, owner, name):
         self.name = f'_{name}'
 
     def __set__(self, instance, value):
+        self.verify_coord(value)
         print(f'__set__: {self.name} = {value}')
         setattr(instance, self.name, value)
 
