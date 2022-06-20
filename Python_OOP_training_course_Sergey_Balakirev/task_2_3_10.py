@@ -46,5 +46,6 @@ if __name__ == '__main__':
     pr.add_telecast(Telecast(1, "Доброе утро", 10000))
     pr.add_telecast(Telecast(2, "Новости", 2000))
     pr.add_telecast(Telecast(3, "Интервью с Балакиревым", 20))
+    pr.remove_telecast(1)
     for t in pr.items:
         print(f"{t.name}: {t.duration}")
