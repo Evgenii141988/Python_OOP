@@ -3,11 +3,10 @@ import re
 
 class DigitRetrieve:
     def __call__(self, string: str, *args, **kwargs):
-        if string.isdigit():
+        try:
             return int(string)
-        elif '-' in string and string.lstrip('-').isdigit() and '--' not in string:
-            return int(string)
-        return None
+        except ValueError:
+            return None
 
 
 if __name__ == '__main__':
