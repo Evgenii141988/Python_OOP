@@ -30,27 +30,25 @@ class MaxPooling:
         h_step, v_step = self.__step
         h_size, v_size = self.__size
 
-        rows_result = (rows - v_size) // v_step + 1
-        cols_result = (cols - h_size) // h_step + 1
-        result = [[0] * cols_result for _ in range(rows_result)]
+        result = []
 
-        di = 0
         for i in range(0, rows, v_step):
-            dj = 0
+            row_number = []
             for j in range(0, cols, h_step):
                 try:
-                    result[di][dj] = self.get_max_number(i, j, h_size, v_size, matrix)
-                    dj += 1
+                    num = self.get_max_number(i, j, h_size, v_size, matrix)
+                    row_number.append(num)
                 except IndexError:
-                    di += 1
-                    dj += 1
                     break
-            di += 1
+            if row_number:
+                result.append(row_number)
 
         return result
 
 
 if __name__ == '__main__':
     mp = MaxPooling(step=(2, 2), size=(2, 2))
+    # res = mp([[1, 2, 3, 4], [5, 6, 7, 8], [9, 8, 7, 6], [5, 4, 3, 2]])
     res = mp([[1, 2, 3], [6, 7, 8], [8, 7, 6]])
     print(res)
+
