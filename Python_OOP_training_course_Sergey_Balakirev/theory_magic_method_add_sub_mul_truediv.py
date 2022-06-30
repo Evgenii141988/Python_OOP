@@ -56,6 +56,17 @@ class Clock:
         self.seconds += sc
         return self
 
+    def __eq__(self, other):
+        sc = other if isinstance(other, int) else other.seconds
+        return self.seconds == sc
+
+    def __lt__(self, other):
+        sc = other if isinstance(other, int) else other.seconds
+        return self.seconds < sc
+
+    def __gt__(self, other):
+        sc = other if isinstance(other, int) else other.seconds
+        return self.seconds < sc
 
 if __name__ == '__main__':
     c1 = Clock(1000)
@@ -63,4 +74,7 @@ if __name__ == '__main__':
     c3 = c1 / c2
     # c1 = 1000 + c1
     # c1 += 100
-    print(c3.get_time())
+    # print(c3.get_time())
+    print(1000 == c1)
+    print(1000 > c1)
+    print(1000 < c1)
