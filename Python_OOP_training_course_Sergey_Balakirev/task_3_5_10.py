@@ -36,5 +36,6 @@ if __name__ == '__main__':
     b2.add_thing(Thing('мел', 100))
     b2.add_thing(Thing('доска', 2000))
 
+
     res = b1 == b2  # True
     print(res)
