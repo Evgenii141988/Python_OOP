@@ -3,6 +3,12 @@ class TriangleListIterator:
         self.lst = lst
         self.__len_lst = len(lst)
 
+    # def __iter__(self):
+    #     for i in range(self.__len_lst):
+    #         for j in range(i + 1):
+    #             yield self.lst[i][j]
+
+
     def __iter__(self):
         self.__res_lst = []
         for i in range(self.__len_lst):
