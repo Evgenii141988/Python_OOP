@@ -96,7 +96,7 @@ class TicTacToe:
             if self.pole[x][y]:
                 self[x, y] = self.HUMAN_X
                 break
-            # print('Клетка занята!!!')
+            print('Клетка занята!!!')
 
     def computer_go(self):
         while True:
@@ -144,5 +144,3 @@ if __name__ == '__main__':
         print("Все получится, со временем")
     else:
         print("Ничья.")
-
-    # print(game.is_computer_win, game.is_human_win, game.is_draw)
