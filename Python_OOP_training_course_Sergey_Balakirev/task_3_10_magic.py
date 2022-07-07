@@ -91,11 +91,11 @@ class TicTacToe:
         while True:
             try:
                 x, y = tuple(int(i) for i in input('Введите координаты клетки (два числа через пробел): ').split())
-            except ValueError:
+                if self.pole[x][y]:
+                    self[x, y] = self.HUMAN_X
+                    break
+            except Exception:
                 raise IndexError('некорректно указанные индексы')
-            if self.pole[x][y]:
-                self[x, y] = self.HUMAN_X
-                break
             print('Клетка занята!!!')
 
     def computer_go(self):
