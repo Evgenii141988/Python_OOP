@@ -34,7 +34,6 @@ class NetworkIterator:
             self.network = self.network.next_layer
 
 
-
 if __name__ == '__main__':
     network = Input(128)
     layer = network(Dense(network.inputs, 1024, 'linear'))
