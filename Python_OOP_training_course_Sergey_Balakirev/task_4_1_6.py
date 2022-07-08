@@ -34,6 +34,5 @@ class DetailView(GenericView):
 
 if __name__ == '__main__':
     dv = DetailView()
-    print(dv.__dict__)
     html = dv.render_request({'url': 'https://site.ru/home'}, 'GET')
     print(html)
