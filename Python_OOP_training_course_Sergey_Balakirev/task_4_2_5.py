@@ -63,7 +63,6 @@ def get_lst(lst: list, obj: type) -> list:
 
 if __name__ == '__main__':
     m = Monkey("мартышка", 30.4, 7)
-    print(m.__dict__)
     lst_objs = [Monkey("мартышка", 30.4, 7), Monkey("шимпанзе", 24.6, 8),
                 Person("Балакирев", 88, 34), Person("Верховный жрец", 67.5, 45),
                 Flower("Тюльпан", 0.2, 1), Flower("Роза", 0.1, 2),
