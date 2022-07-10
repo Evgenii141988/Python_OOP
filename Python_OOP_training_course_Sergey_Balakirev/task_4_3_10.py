@@ -18,10 +18,5 @@ class Point(ItemAttrs):
 if __name__ == '__main__':
     pt = Point(1, 2.5)
     x = pt[0]  # 1
-    print(x)
-    print(pt.__dict__)
     y = pt[1]  # 2.5
-    print(y)
     pt[0] = 10
-    print(pt.__dict__)
-    print(pt[0])
