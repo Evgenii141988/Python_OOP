@@ -19,7 +19,6 @@ class Callback:
         self.router_cls.add_callback(self.path, func)
 
 
-
 @Callback('/', Router)
 def index():
     print('index')
