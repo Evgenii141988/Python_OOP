@@ -49,7 +49,7 @@ if __name__ == '__main__':
     ag.add_object(Flat("квартира, 1к", 4000000, 54, 1))
     ag.add_object(House("дом, крипичный", price=35000000, material="кирпич", square=186.5))
     ag.add_object(Land("участок под застройку", 3000000, 6.74))
-    for obj in ag:
+    for obj in ag.get_objects():
         print(obj.name)
 
     for obj in ag:
