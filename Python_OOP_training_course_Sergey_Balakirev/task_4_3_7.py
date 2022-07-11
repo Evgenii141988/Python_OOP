@@ -1,7 +1,10 @@
 def integer_params_decorated(func):
+    # print(func)
     def wrapper(*args):
+        print(args)
         if not all((isinstance(i, int) for i in args[1:])):
             raise TypeError("аргументы должны быть целыми числами")
+        print(func)
         return func(*args)
 
     return wrapper
