@@ -1,10 +1,11 @@
 from abc import ABC, abstractmethod
 
 
-class Model:
+class Model(ABC):
+
     @abstractmethod
     def get_pk(self):
-        raise TypeError
+        pass
 
     def get_info(self):
         return f"Базовый класс Model"
