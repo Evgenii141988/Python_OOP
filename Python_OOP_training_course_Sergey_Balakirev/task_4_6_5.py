@@ -11,27 +11,17 @@ class ShopItem:
 
 
 class ShopGenericView:
-    def __get_str(self):
+
+    def __repr__(self):
         res = [f'{k}: {v}' for k, v in self.__dict__.items()]
         return '\n'.join(res)
 
-    def __str__(self):
-        return self.__get_str()
-
-    def __repr__(self):
-        return self.__get_str()
-
 
 class ShopUserView:
-    def __get_str(self):
-        res = [f'{k}: {v}' for k, v in self.__dict__.items() if k != '_id']
-        return '\n'.join(res)
-
-    def __str__(self):
-        return self.__get_str()
 
     def __repr__(self):
-        return self.__get_str()
+        res = [f'{k}: {v}' for k, v in self.__dict__.items()]
+        return '\n'.join(res)
 
 
 class Book(ShopItem, ShopUserView):
