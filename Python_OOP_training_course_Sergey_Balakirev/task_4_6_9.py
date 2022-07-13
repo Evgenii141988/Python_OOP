@@ -51,4 +51,4 @@ if __name__ == '__main__':
     m = m1 + 10
     print(m)  # MoneyR: 11
     m = m1 - 5.4
-    # m = m1 + m2  # TypeError
+    m = m1 + m2  # TypeError
