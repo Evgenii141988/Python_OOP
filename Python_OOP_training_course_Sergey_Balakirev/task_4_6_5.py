@@ -20,7 +20,7 @@ class ShopGenericView:
 class ShopUserView:
 
     def __repr__(self):
-        res = [f'{k}: {v}' for k, v in self.__dict__.items()]
+        res = [f'{k}: {v}' for k, v in self.__dict__.items() if k != '_id']
         return '\n'.join(res)
 
 
