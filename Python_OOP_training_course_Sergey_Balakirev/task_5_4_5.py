@@ -1,13 +1,13 @@
 class PrimaryKeyError(Exception):
     def __init__(self, **kwargs):
         if len(kwargs) == 0:
-            self.messege = 'Первичный ключ должен быть целым неотрицательным числом'
+            self.message = 'Первичный ключ должен быть целым неотрицательным числом'
         else:
             key = list(kwargs)[0]
-            self.messege = f'Значение первичного ключа {key} = {kwargs[key]} недопустимо'
+            self.message = f'Значение первичного ключа {key} = {kwargs[key]} недопустимо'
 
     def __str__(self):
-        return self.messege
+        return self.message
 
 
 if __name__ == '__main__':
