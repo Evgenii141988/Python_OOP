@@ -3,11 +3,11 @@ class StringException(Exception):
 
 
 class NegativeLengthString(Exception):
-    pass
+    """ошибка, если длина отрицательная"""
 
 
 class ExceedLengthString(Exception):
-    pass
+    """ошибка, если длина превышает заданное значение"""
 
 
 if __name__ == '__main__':
