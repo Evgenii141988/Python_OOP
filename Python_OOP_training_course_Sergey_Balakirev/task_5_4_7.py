@@ -97,7 +97,7 @@ if __name__ == '__main__':
     ld = TupleData(CellInteger(0, 10), CellInteger(11, 20), CellFloat(-10, 10), CellString(1, 100))
 
     try:
-        ld[44] = 1
+        ld[0] = 1
         ld[1] = 20
         ld[2] = -5.6
         ld[3] = "Python ООП"
