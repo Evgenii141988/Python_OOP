@@ -34,6 +34,7 @@ class BoxDefender:
             self._box.things = self._things
         return False
 
+
 if __name__ == '__main__':
     b = Box('name', 2000)
     assert b._name == 'name' and b._max_weight == 2000, "неверные значения атрибутов объекта класса Box"
@@ -51,3 +52,10 @@ if __name__ == '__main__':
     else:
         assert False, "не сгенерировалось исключение ValueError"
 
+    try:
+        with BoxDefender(b) as bb:
+            bb.add_thing(("3", 100))
+    except ValueError:
+        assert False, "возникло исключение ValueError, хотя, его не должно было быть"
+    else:
+        assert len(b._things) == 3, "неверное число элементов в списке _things"
